@@ -14,8 +14,34 @@ function generateSquares() {
     squaresArray[i].textContent = 'a';
     squaresArray[i].classList.add('square');
     squaresArray[i].style.width = squareWidth + 'px';
+    squaresArray[i].addEventListener('mouseover', changeBackground);
     board.appendChild(squaresArray[i]);
   }
+}
+
+function changeBackground(e) {
+  if (!e.target.style.backgroundColor) {
+    e.target.style.backgroundColor = generateColor();
+  } else {
+    e.target.style.backgroundColor = darkenColor(e.target.style.backgroundColor);
+  }
+}
+
+function generateColor() {
+  let hue = Math.floor(Math.random() * 360);
+  let saturation = Math.floor(Math.random() * 50 + 50);
+  let lightness = Math.floor(Math.random() * 60 + 30);
+
+  return ('hsl(' + hue + ' ' + saturation + '% ' + lightness + '%)');
+}
+
+function darkenColor(color) {
+  let colorArray = color.split(',');
+  let red = Math.floor(parseInt(colorArray[0]) * 0.9);
+  let sth = colorArray[0].replace('rgb(', '');
+  alert(sth);
+  let green = 0;
+  let blue = 0;
 }
 
 function removeSquares() {
@@ -42,10 +68,6 @@ function promptUser() {
     numOfSquares = userChoiceSquares;
     generateSquares();
   } else {
-    // alert("Invalid input. Please enter an integer from 1 to 100!");
     promptUser();
   }
 }
-// generate enough divs to fill the space
-// place squares inside board (container)
-// add an event listener to each 
