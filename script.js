@@ -11,7 +11,6 @@ function generateSquares() {
   for (let i = 0; i < (numOfSquares * numOfSquares); i++) {
     // create and add div to the page, store in array
     squaresArray[i] = document.createElement('div');
-    squaresArray[i].textContent = 'a';
     squaresArray[i].classList.add('square');
     squaresArray[i].style.width = squareWidth + 'px';
     squaresArray[i].addEventListener('mouseover', changeBackground);
@@ -28,20 +27,20 @@ function changeBackground(e) {
 }
 
 function generateColor() {
-  let hue = Math.floor(Math.random() * 360);
-  let saturation = Math.floor(Math.random() * 50 + 50);
-  let lightness = Math.floor(Math.random() * 60 + 30);
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
 
-  return ('hsl(' + hue + ' ' + saturation + '% ' + lightness + '%)');
+  return ('rgb(' + red + ', ' + green + ', ' + blue + ')');
 }
 
 function darkenColor(color) {
-  let colorArray = color.split(',');
-  let red = Math.floor(parseInt(colorArray[0]) * 0.9);
-  let sth = colorArray[0].replace('rgb(', '');
-  alert(sth);
-  let green = 0;
-  let blue = 0;
+  let colorArray = color.split(",");  
+  let red = parseInt(colorArray[0].replace("rgb(", "")) * 0.7;
+  let green = parseInt(colorArray[1]) * 0.7;
+  let blue = parseInt(colorArray[2].replace(")", "")) * 0.7;
+
+  return ('rgb(' + red + ', ' + green + ', ' + blue + ')');
 }
 
 function removeSquares() {
