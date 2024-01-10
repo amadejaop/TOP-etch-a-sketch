@@ -1,12 +1,6 @@
 THE ODIN PROJECT
 Etch-a-sketch project
 
-What is etch-a-sketch?
-A mechanical drawing toy.
-
-We will be making a digital version of this, allowing users to draw.
-We will be using JavaScript, css and html to make it happen.
-
 Instructions: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 
 // create 256 divs (16 x 16 grid) with js
@@ -19,5 +13,5 @@ Instructions: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
 // add a button on top of the screen, that will ask a user in a popup how many squares per side for the new grid, then generate it (same space; 960px)
 // set limit to user input to 100
 // add event listener to the button onclick to do the above
-// use prompt to prompt user (you should be able to enter 64 and get 64x64 grid without changing width
+// use prompt to prompt user (you should be able to enter 64 and get 64x64 grid without changing width)
 
