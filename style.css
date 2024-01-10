@@ -1,8 +1,10 @@
 #board {
+  border: 1px solid black;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   height: 960px;
   width: 960px;
-  border: 1px solid black;
 }
 
 button {
@@ -11,4 +13,5 @@ button {
 
 .square {
   border: 1px solid black;
+  flex: 1 1 auto;
 }
